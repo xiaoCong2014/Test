@@ -69,10 +69,12 @@ public class MVVM_Activity extends Activity {
     public void bindingData_isVisible() {
         //test mvvm_is_visible.xml
         MvvmIsVisibleBinding mvvmIsVisibleBinding = DataBindingUtil.setContentView(this, R.layout.mvvm_is_visible);
+
         Bean bean = new Bean("bindingData_test", "3");
         bean.isFriend = true;
-        //bean.isVisible=false;
-        bean.isVisible = true;
+        bean.isVisible = false;
+//        bean.isVisible = true;
+
         mvvmIsVisibleBinding.setBean(bean);
         mvvmIsVisibleBinding.setMyHandlers(new MyHandlers());
     }

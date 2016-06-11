@@ -5,8 +5,11 @@
 
         <variable
             name="bean"
-            type="mvvm.Bean"></variable>
+            type="mvvm.Bean" />
 
+        <variable
+            name="myHandlers"
+            type="mvvm.MyHandlers" />
     </data>
 
     <LinearLayout
@@ -18,16 +21,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@{bean..}"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal" />
+            android:text="@{bean.name}"
+            android:id="@+id/textView_name"
+            android:onClick="@{myHandlers.hello}" />
+        <!--判断，在View-->
+        <!--   android:onClick="@{bean.isFriend? myHandlers.onClickFriend:myHandlers.onClickEnemy}" -->
+        <!--不传参数-->
+        <!--android:onClick="@{myHandlers.hello}"-->
+        <!--传参数,不是这样传的-->
+        <!--android:onClick="@{myHandlers.helloBeanName(bean.name)}"-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/textView3"
-            android:layout_gravity="right" />
+            android:text="@{bean.age}"
+            android:id="@+id/textView_age" />
+
+
     </LinearLayout>
 </layout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bean"
+            type="mvvm.Bean" />
+
+        <variable
+            name="myHandlers"
+            type="mvvm.MyHandlers" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@{bean.name}"
+            android:id="@+id/textView_name" />
+        <!--判断，在View   android:onClick="@{myHandlers.hello}"-->
+        <!--   android:onClick="@{bean.isFriend? myHandlers.onClickFriend:myHandlers.onClickEnemy}" -->
+        <!--不传参数-->
+        <!--android:onClick="@{myHandlers.hello}"-->
+        <!--传参数,不是这样传的-->
+        <!--android:onClick="@{myHandlers.helloBeanName(bean.name)}"-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="控件可视化"
+            android:id="@+id/textView_isVisible"
+            android:visibility="@{bean.isVisible?View.VISIBLE:View.GONE}" />
+
+
+    </LinearLayout>
+</layout>

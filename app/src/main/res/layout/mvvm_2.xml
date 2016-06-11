@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-
     <data>
-
         <variable
-            name="user"
-            type="mvvm.User" />
-
-        <variable
-            name="myHandlers"
-            type="mvvm.MyHandlers" />
+            name="bean"
+            type="mvvm.Bean" />
     </data>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,14 +13,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{myHandlers.hello}"
-            android:text="@{user.firstName}"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@{bean.name}"
+            android:id="@+id/textView_name" />
+        <!--
+            android:onClick="@{bean.isFriend?handlers.onClickFriend:handlers.onClickEnemy}" -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{user.lastName}"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@{bean.age}"
+            android:id="@+id/textView_age" />
     </LinearLayout>
 </layout>

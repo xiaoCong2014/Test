@@ -8,6 +8,7 @@ import a.test.R;
 import a.test.databinding.Mvvm2Binding;
 import a.test.databinding.Mvvm3Binding;
 import a.test.databinding.MvvmBinding;
+import a.test.databinding.MvvmImageBinding;
 import a.test.databinding.MvvmIsVisibleBinding;
 //import a.test.databinding.Mvvm2Binding;
 //import a.test.databinding.MvvmBinding;
@@ -79,10 +80,28 @@ public class MVVM_Activity extends Activity {
         mvvmIsVisibleBinding.setMyHandlers(new MyHandlers());
     }
 
+    public void test() {
+        setContentView(R.layout.test);
+    }
+
+    public void bindingData_hasImage() {
+        //test mvvm_is_visible.xml
+        MvvmImageBinding mvvmImageBinding = DataBindingUtil.setContentView(this, R.layout.mvvm_image);
+
+        ImageBean imageBean = new ImageBean();
+        //  imageBean.hasImage = true;
+        imageBean.hasImage = false;
+
+        mvvmImageBinding.setImageBean(imageBean);
+
+
+//        mvvmIsVisibleBinding.setBean(bean);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //  test();
         // bindingData_test();
         //  bindingData_1();
         //bindingData_2();
@@ -91,7 +110,14 @@ public class MVVM_Activity extends Activity {
         //TODO 双向绑定的事件
         //bindingEvents();
 
-        bindingData_isVisible();
+        //bindingData_isVisible();
+
+        //TODO  pass parm in V
+
+        bindingData_hasImage();
+
+
+
 
     }
 

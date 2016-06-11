@@ -9,4 +9,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Test"
         android:id="@+id/textView" />
+
+
 </LinearLayout>

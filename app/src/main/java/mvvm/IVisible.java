@@ -8,7 +8,4 @@ import android.view.View;
 public interface IVisible {
     int visible = View.VISIBLE;
     int unvisible = View.GONE;
-    //:View.GONE
-
-
 }
